@@ -1,5 +1,3 @@
-alert("hello, world!");
-
 // name our angular app
 angular.module('firstApp', [])
 	.controller('mainController', function() {
@@ -27,6 +25,21 @@ angular.module('firstApp', [])
 		];
 
 		console.log("defined computers");
-	});
 
-alert("end of file");
+		// information that comes from our form
+		vm.computerData = {};
+
+		
+		vm.addComputer = function() {
+		// add a computer to the list
+		vm.computers.push({
+		name: vm.computerData.name,
+		color: vm.computerData.color,
+		nerdness: vm.computerData.nerdness
+		});
+		// after our computer has been added, clear the form
+		vm.computerData = {};
+		};
+
+
+	});
